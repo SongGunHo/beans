@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>save.html</h2>
+  <form action="save" method="post">
+      <div>
+          <tr>
+              <th>
+                  <td>
+              <input type="text" name="memberEmail" onblur="emailCheck()"><br>
+              <p id="resultCheck()"></p>
+          </td>
+              </th>
+              <th>
+                  <td>
+              <input type="memberPassword" name="memberPassword"><br>
+          </td>
+              </th>
+              <th>
+                  <td>
+              <input type="text" name="memberName"><br>
+          </td>
+              </th>
+              <th>
+                  <td>
+              <input type="text" name="memberPhone"><br>
+          </td>
+              </th>
+              <input type="submit" value="회원가입">
+          </tr>
+      </div>
+  </form>
+</body>
+<script>
+    const emailCheck =()=>{
+        const email = document.getElementById("memberEmail");
+        const resultCheck = document.getElementById("result").value;
+        $.ajax({
+            type:"text",
+            dateType: "post",
+            url:"emailCheck",
+            date:{
+                "memberEmail":email,
+            },
+            success: function (result){
+                if(result=="ok"){
+                    Checkresult.innerHTML="사용 가능";
+                    Checkresult.style.color="red";
+                }else {
+                    Checkresult.innerHTML="불가 합니다";
+                    Checkresult.style.color="green";
+                }
+            }
+        })
+    }
+</script>
+</html>

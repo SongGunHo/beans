@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>list.html</h2>
+    <tr>
+        <th>아이디</th>
+        <th>원두</th>
+        <th>핸드드립</th>
+    </tr>
+    <tr th:each="all${all}">
+        <td th:text="${all.id}"></td>
+        <td th:text="${all.beans}"></td>
+        <td th:text="${all.supplies}"></td>
+    </tr>
+</body>
+</html>

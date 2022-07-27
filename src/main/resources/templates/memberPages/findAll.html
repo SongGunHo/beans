@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h2>findAll.html</h2>
+    <p th:text="${session['login']}"></p>
+    <p th:text="${session.login}"></p>
+    <table>
+    <tr>
+        <th>아이디</th>
+        <th>이메일</th>
+        <th>비밀번호</th>
+        <th>이름</th>
+        <th>전화번호</th>
+    </tr>
+    <tr th:each="all${login}" >
+        <td th:text="${all.id}"></td>
+        <td th:text="${all.memberEmail}"></td>
+        <td th:text="${all.memberPassword}"></td>
+        <td th:text="${all.memberName}"></td>
+        <td th:text="${all.memberPhone}"></td>
+    </tr>
+    </table>
+    <a href="detail">아이디 조회</a>
+</body>
+</html>

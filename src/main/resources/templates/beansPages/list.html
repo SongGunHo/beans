@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>매뉴목록</h2>
+    <table>
+        <div>
+            <tr>
+                <th>관리자아이디</th>
+                <th>만델링원두</th>
+                <th>로부스타원두</th>
+                <th>홀릭원두</th>
+                <th>업로드</th>
+                <th>조회수</th>
+            </tr>
+             <tr th:each="all${all}">
+                 <td th:text="${all.id}"></td>
+                 <td th:text="${all.beandMandeling}"></td>
+                 <td th:text="${all.beansHolic}"></td>
+                 <td th:text="*{#temporals.format(all.createdTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                 <td th:text="${all.beansHits}"></td>
+             </tr>
+            <a href="/beans/detail">조회</a>
+        </div>
+    </table>
+</body>
+</html>

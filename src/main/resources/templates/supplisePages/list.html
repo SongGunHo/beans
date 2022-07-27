@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>list.html</h2>
+    <table>
+        <div>
+            <tr>
+                <th>관리자아이디</th>
+                <th>소형핸드밀</th>
+                <th>원형핸드밀</th>
+                <th>드립필터</th>
+            </tr>
+            <tr th:ecch="all${all}">
+                <td th:text="${all.id}"></td>
+                <td th:text="${all.smallHandmill}"></td>
+                <td th:text="${all.}"></td>
+            </tr>
+        </div>
+    </table>
+</body>
+</html>
